@@ -32,10 +32,11 @@ RUN set -ex; \
 ENV TEAMSPEAK_URL http://dl.4players.de/ts/releases/3.3.0/teamspeak3-server_linux_amd64-3.3.0.tar.bz2
 
 RUN { \
+  apk add --no-cache ca-certificates; \
   addgroup -g 1000 teamspeak; \
   adduser -u 1000 -G teamspeak -h /home/teamspeak -S -D teamspeak -s /bin/sh; \
   \
-  apk add --no-cache --virtual .get-deps curl ca-certificates; \
+  apk add --no-cache --virtual .get-deps curl; \
   \
   curl -o /tmp/teamspeak3-server_linux_amd64.tar.bz2 "${TEAMSPEAK_URL}"; \
   \
