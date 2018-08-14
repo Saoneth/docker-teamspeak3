@@ -68,4 +68,4 @@ RUN { \
 VOLUME ["/data"]
 EXPOSE 9987/udp 10011 30033
 ENTRYPOINT ["/usr/local/bin/gosu", "teamspeak:teamspeak", "/home/teamspeak/ts3server_minimal_runscript.sh"]
-CMD ["inifile=/data/ts3server.ini", "logpath=/data/logs", "licensepath=/data/", "query_ip_whitelist=/data/query_ip_whitelist.txt", "query_ip_backlist=/data/query_ip_blacklist.txt"]
+CMD ["license_accepted=1", "inifile=/data/ts3server.ini", "logpath=/data/logs", "licensepath=/data/", "query_ip_whitelist=/data/query_ip_whitelist.txt", "query_ip_backlist=/data/query_ip_blacklist.txt"]
