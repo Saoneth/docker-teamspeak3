@@ -19,10 +19,7 @@ RUN set -ex; \
         \
 # verify the signature
         export GNUPGHOME="$(mktemp -d)"; \
-        export GPG_KEYS="B42F6819007F00F88E364FD4036A9C25BF357DD4"; \
-        ( gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$GPG_KEYS" \
-          || gpg --keyserver pgp.mit.edu --recv-keys "$GPG_KEYS" \
-          || gpg --keyserver keyserver.pgp.com --recv-keys "$GPG_KEYS" ); \
+        gpg --keyserver p80.pool.sks-keyservers.net --recv-keys "B42F6819007F00F88E364FD4036A9C25BF357DD4"; \
         gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; \
         rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc; \
         \
