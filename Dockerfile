@@ -29,7 +29,7 @@ RUN set -ex; \
         \
         apk del .gosu-deps
 
-ENV TEAMSPEAK_URL http://dl.4players.de/ts/releases/3.0.13.8/teamspeak3-server_linux_amd64-3.0.13.8.tar.bz2
+ENV TEAMSPEAK_URL http://dl.4players.de/ts/releases/3.3.0/teamspeak3-server_linux_amd64-3.3.0.tar.bz2
 
 RUN { \
   addgroup -g 1000 teamspeak; \
