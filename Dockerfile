@@ -2,7 +2,7 @@ FROM saoneth/apline-glibc
 
 ENV LANG=C.UTF-8
 
-ENV GOSU_VERSION 1.10
+ARG GOSU_VERSION 1.11
 RUN set -ex; \
         \
         fetchDeps=' \
@@ -29,7 +29,7 @@ RUN set -ex; \
         \
         apk del .gosu-deps
 
-ENV TEAMSPEAK_URL http://dl.4players.de/ts/releases/3.3.0/teamspeak3-server_linux_amd64-3.3.0.tar.bz2
+ARG TEAMSPEAK_URL http://dl.4players.de/ts/releases/3.5.0/teamspeak3-server_linux_amd64-3.5.0.tar.bz2
 
 RUN { \
   apk add --no-cache ca-certificates; \
